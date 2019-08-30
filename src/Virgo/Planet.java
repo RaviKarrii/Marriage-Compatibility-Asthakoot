@@ -4,10 +4,10 @@ public class Planet {
     String Name,ActualCoord,CalcCoord,Raasi,Nakshatra;
     public Planet(String Name,String ActualCoord,String CalcCoord,String Raasi,String Nakshatra)
     {
-        Name = this.Name;
-        ActualCoord = this.ActualCoord;
-        CalcCoord = this.CalcCoord;
-        Raasi = this.Raasi;
-        Nakshatra = this.Nakshatra;
+        this.Name = Name;
+        this.ActualCoord = ActualCoord;
+        this.CalcCoord = CalcCoord;
+        this.Raasi = Raasi;
+        this.Nakshatra = Nakshatra;
     }
 }

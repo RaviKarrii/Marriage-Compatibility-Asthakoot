@@ -5,6 +5,8 @@ import swisseph.*;
 import java.lang.management.PlatformLoggingMXBean;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
 import java.util.zip.CheckedOutputStream;
@@ -27,16 +29,17 @@ public class Horoscope {
      */
     public static final String plNams[] = {"Sun", "Moon", "Mercury", "Venus", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto", "Rahu", "Ketu"};
 
+    public List<Planet> planetlist = new ArrayList<Planet>();
     int flags = SweConst.SEFLG_SWIEPH | SweConst.SEFLG_SPEED  | SweConst.SEFLG_SIDEREAL;
     //boolean retrograde = false;
 
     public Horoscope(String Name,String DOBD,String DOBT,String LAT,String LON)
     {
-        Name = this.Name;
-        DOBD = this.DOBD;
-        DOBT = this.DOBT;
-        LAT = this.LAT;
-        LON = this.LON;
+        this.Name = Name;
+        this.DOBD = DOBD;
+        this.DOBT = DOBT;
+        this.LAT = LAT;
+        this.LON = LON;
     }
     public void process(){
         Day = Integer.parseInt(DOBD.split("/")[0]);
@@ -55,9 +58,24 @@ public class Horoscope {
             String PLDET = getPlanetPos(number,sd);
             String[] arr = PLDET.split(":");
             String raasi = c.RaasiFinder(Integer.parseInt(arr[1].trim()));
-            
+            Planet p = new Planet(plNams[number],arr[1]+":"+arr[2]+":"+arr[3],derive(Integer.parseInt(arr[1]))+":"+arr[2]+":"+arr[3],raasi,String.valueOf(c.calculateNakshatra(Double.parseDouble((arr[1])))));
+            planetlist.add(p);
             //Planet e = new Planet();
         }
+        for(Planet i:planetlist){
+            System.out.println(i.Name);
+            //System.out.println(i.ActualCoord);
+            System.out.println(i.CalcCoord);
+            //System.out.println(i.Nakshatra);
+            System.out.println(i.Raasi);
+        }
+    }
+    public int derive(int a){
+        int b = 30;
+        while (b <= a){
+            a = a-b;
+        }
+        return a;
     }
     private String TZcalc(){
         return "IST";

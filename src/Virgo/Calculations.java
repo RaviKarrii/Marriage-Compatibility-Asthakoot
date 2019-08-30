@@ -1,6 +1,8 @@
 package Virgo;
 
 public class Calculations {
+    public String nakshatra[] = {"Ashwini", "Bharani", "Krittika", "Rohini", "Mrigshira", "Ardra", "Punarvasu", "Pushya", "Ashlesha", "Magha", "Purva Phalguni", "Uttara Phalguni", "Hasta", "Chitra", "Swati", "Vishakha", "Anuradha", "Jyestha", "Mula", "Purva Ashadha", "Uttara Ashadha", "Shravana", "Dhanishta", "Satabhisha", "Purva Bhadrapada", "Uttara Bhadrapada", "Revati", "Ashwini"};
+
     public String RaasiFinder(int angle)
     {
         if (angle >= 0 && angle < 30){
@@ -40,5 +42,14 @@ public class Calculations {
             return "Pisces";
         }
         return "";
+    }
+    public static int calculateNakshatra(double moonlog)
+    {
+
+        int i = (int) (moonlog / (13.333333));
+        if(i<0){
+            i=0;
+        }
+        return i;
     }
 }
