@@ -30,6 +30,8 @@ public class Main_Window {
             public void actionPerformed(ActionEvent e) {
                 Horoscope Boy = new Horoscope(BName.getText(),BBD.getText(),BBT.getText(),BLat.getText(),BLon.getText());
                 Horoscope Girl = new Horoscope(GName.getText(),GBD.getText(),GBT.getText(),GLat.getText(),GLon.getText());
+                Boy.process();
+                Girl.process();
             }
         });
     }
