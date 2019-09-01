@@ -62,13 +62,13 @@ public class Horoscope {
             planetlist.add(p);
             //Planet e = new Planet();
         }
-        for(Planet i:planetlist){
-            System.out.println(i.Name);
+        //for(Planet i:planetlist){
+          //  System.out.println(i.Name);
             //System.out.println(i.ActualCoord);
-            System.out.println(i.CalcCoord);
+            //System.out.println(i.CalcCoord);
             //System.out.println(i.Nakshatra);
-            System.out.println(i.Raasi);
-        }
+            //System.out.println(i.Raasi);
+        //}
     }
     public int derive(int a){
         int b = 30;
@@ -121,7 +121,7 @@ public class Horoscope {
                 flags,
                 res,
                 sbErr);
-        System.out.println(plNams[planet]+" - " + dms(res[0]) );
+        //System.out.println(plNams[planet]+" - " + dms(res[0]) );
         return plNams[planet]+":" + dms(res[0]);
     }
     public static double decimal( int deg, int min, int sec ) {

@@ -2,6 +2,35 @@ package Virgo;
 
 public class Astakoot {
     int boyNak,girlNak;
+
+    Double [][] TaraConst = {
+            {3.0, 3.0, 1.5, 3.0, 1.5, 3.0, 1.5, 3.0, 3.0},
+            {3.0, 3.0, 1.5, 3.0, 1.5, 3.0, 1.5, 3.0, 3.0},
+            {1.5, 1.5, 0.0, 1.5, 0.0, 1.5, 0.0, 1.5, 1.5},
+            {3.0, 3.0, 1.5, 3.0, 1.5, 3.0, 1.5, 3.0, 3.0},
+            {1.5, 1.5, 0.0, 1.5, 0.0, 1.5, 0.0, 1.5, 1.5},
+            {3.0, 3.0, 1.5, 3.0, 1.5, 3.0, 1.5, 3.0, 3.0},
+            {1.5, 1.5, 0.0, 1.5, 0.0, 1.5, 0.0, 1.0, 1.0},
+            {3.0, 3.0, 1.5, 3.0, 1.5, 3.0, 1.5, 3.0, 3.0},
+            {3.0, 3.0, 1.5, 3.0, 1.5, 3.0, 1.5, 3.0, 3.0}
+    };
+    int [] animalMappings = {0,1,2,3,3,4,5,2,5,6,6,7,8,9,8,9,11,10,4,11,12,11,13,0,13,7,1,12};
+    int [][] YoniArray = {
+            {4, 2, 2, 3, 2, 2, 2, 1, 0, 1, 1, 3, 2, 1},
+            {2, 4, 3, 3, 2, 2, 2, 2, 3, 1, 2, 3, 2, 0},
+            {2, 3, 4, 3, 2, 2, 2, 2, 3, 1, 2, 3, 2, 0},
+            {3, 3, 2, 4, 2, 1, 1, 1, 1, 2, 2, 2, 0, 2},
+            {2, 2, 1, 2, 4, 2, 1, 2, 2, 1, 0, 2, 1, 1},
+            {2, 2, 2, 1, 2, 4, 0, 2, 2, 1, 3, 3, 2, 1},
+            {2, 2, 1, 1, 1, 0, 4, 2, 2, 2, 2, 2, 1, 2},
+            {1, 2, 3, 1, 2, 2, 2, 4, 3, 0, 3, 2, 2, 1},
+            {0, 3, 3, 1, 2, 2, 2, 3, 4, 1, 2, 2, 2, 2},
+            {1, 1, 1, 2, 1, 1, 2, 0, 1, 4, 1, 1, 2, 1},
+            {1, 2, 2, 2, 0, 3, 2, 3, 2, 1, 4, 2, 2, 1},
+            {3, 3, 0, 2, 2, 3, 2, 2, 2, 1, 2, 4, 3, 2},
+            {2, 2, 3, 0, 1, 2, 1, 2, 2, 2, 2, 3, 4, 2},
+            {1, 0, 1, 2, 1, 1, 2, 1, 2, 1, 1, 2, 2, 4}
+    };
     public Astakoot(int boyNak,int girlNak){
         this.boyNak = boyNak;
         this.girlNak = girlNak;
@@ -126,4 +155,37 @@ public class Astakoot {
         return gana;
 
     }
+    public String calcTara()
+    {
+        int bn = 0;
+        int gn = 0;
+        if (boyNak<10){
+            bn = boyNak - 1;
+        }
+        else if(boyNak<=18){
+            bn =Integer.parseInt(String.valueOf(boyNak).substring(1));
+        }
+        else{
+            bn =Integer.parseInt(String.valueOf(boyNak).substring(1))+1;
+
+        }
+        if (girlNak<10){
+            gn = girlNak - 1;
+        }
+        else if(girlNak<=18){
+            //gn = girlNak - 10;
+            gn =Integer.parseInt(String.valueOf(girlNak).substring(1));
+
+        }
+        else{
+            gn =Integer.parseInt(String.valueOf(girlNak).substring(1))+1;
+        }
+
+        return String.valueOf(TaraConst[bn][gn]);
+    }
+    public String calcYoni(){
+        System.out.println("Yoni" + String.valueOf(animalMappings[boyNak])+ String.valueOf(animalMappings[girlNak]));
+        return String.valueOf(YoniArray[animalMappings[boyNak]][animalMappings[girlNak]]);
+    }
+
 }

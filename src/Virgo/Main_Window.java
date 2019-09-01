@@ -33,14 +33,19 @@ public class Main_Window {
                 Boy.process();
                 Girl.process();
                 System.out.println(Boy.planetlist.get(1).Nakshatra);
+                System.out.println(Girl.planetlist.get(1).Nakshatra);
                 Astakoot koot = new Astakoot(Integer.parseInt(Boy.planetlist.get(1).Nakshatra),Integer.parseInt(Girl.planetlist.get(1).Nakshatra));
                 int a = koot.calcDinaKuta();
-                a = koot.calcGanaKuta();
+                Log(String.valueOf(koot.calcGanaKuta()));
+                Log(String.valueOf(koot.calcTara()));
+                Log(String.valueOf(koot.calcYoni()));
 
             }
         });
     }
-
+    public void Log(String s){
+        System.out.println(s);
+    }
     public static void main(String[] args) {
         Main_Window mainWin = new Main_Window();
         JFrame Frame = new JFrame("Virgo");
@@ -50,14 +55,14 @@ public class Main_Window {
         Frame.setVisible(true);
         mainWin.BName.setText("Ravi");
         mainWin.GName.setText("Teja");
-        mainWin.BBD.setText("30/08/2019");
-        mainWin.GBD.setText("30/08/2019");
-        mainWin.BBT.setText("18:52:39");
-        mainWin.GBT.setText("18:52:39");
-        mainWin.BLat.setText("17.385044");
-        mainWin.GLat.setText("17.385044");
-        mainWin.BLon.setText("78.486671");
-        mainWin.GLon.setText("78.486671");
+        mainWin.BBD.setText("16/9/1993");
+        mainWin.GBD.setText("6/8/1995");
+        mainWin.BBT.setText("17:55:00");
+        mainWin.GBT.setText("0:7:00");
+        mainWin.BLat.setText("16.9604");
+        mainWin.GLat.setText("17.0052");
+        mainWin.BLon.setText("82.2381");
+        mainWin.GLon.setText("81.7778");
     }
 
 }
