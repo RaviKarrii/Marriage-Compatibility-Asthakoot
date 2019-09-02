@@ -160,30 +160,36 @@ public class Astakoot {
     {
         int bn = 0;
         int gn = 0;
-        if (boyNak<10){
-            bn = boyNak - 1;
+        int bbn = boyNak+1;
+        int bgn = girlNak+1;
+        if (bbn<10){
+            bn = bbn - 1;
         }
-        else if(boyNak<=18){
-            bn =Integer.parseInt(String.valueOf(boyNak).substring(1));
+        else if(bbn<=18){
+            bn =Integer.parseInt(String.valueOf(bbn).substring(1));
         }
         else{
-            bn =Integer.parseInt(String.valueOf(boyNak).substring(1))+1;
+            bn =Integer.parseInt(String.valueOf(bbn).substring(1))+1;
 
         }
-        if (girlNak<10){
-            gn = girlNak - 1;
+        if (bgn<10){
+            gn = bgn - 1;
         }
-        else if(girlNak<=18){
+        else if(bgn<=18){
             //gn = girlNak - 10;
-            gn =Integer.parseInt(String.valueOf(girlNak).substring(1));
+            gn =Integer.parseInt(String.valueOf(bgn).substring(1));
 
         }
         else{
-            gn =Integer.parseInt(String.valueOf(girlNak).substring(1))+1;
+            gn =Integer.parseInt(String.valueOf(bgn).substring(1))+1;
         }
 
         return String.valueOf(Arrays.TaraConst[bn][gn]);
     }
+
+
+
+
     public String calcYoni(){
         System.out.println(nakshatra[boyNak] + " " + nakshatra[girlNak]);
         System.out.println(boyNak + " " + girlNak);

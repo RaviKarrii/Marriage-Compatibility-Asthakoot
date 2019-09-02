@@ -1,6 +1,7 @@
 package Virgo;
 
 import javax.swing.*;
+import javax.swing.text.html.HTML;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -39,13 +40,17 @@ public class Main_Window {
                 Constants constants = new Constants();
                 String HTMLMaker = "";
                 Details.setContentType("text/html");
-                HTMLMaker = "<html><body><table>";
-                HTMLMaker +="<tr><td>Boy Name</td><td>"+Boy.Name+"</td></tr>";
-                HTMLMaker +="<tr><td>Girl Name</td><td>"+Girl.Name+"</td></tr>";
-                HTMLMaker +="<tr><td>Boy Nakshatra</td><td>"+constants.nakshatra[Integer.parseInt(Boy.planetlist.get(1).Nakshatra)]+"</td></tr>";
-                HTMLMaker +="<tr><td>Girl Nakshatra</td><td>"+constants.nakshatra[Integer.parseInt(Girl.planetlist.get(1).Nakshatra)]+"</td></tr>";
-                HTMLMaker +="<tr><td>Boy Raasi</td><td>"+Raasi[Integer.parseInt(Boy.planetlist.get(1).Raasi)]+"</td></tr>";
-                HTMLMaker +="<tr><td>Girl Raasi</td><td>"+Raasi[Integer.parseInt(Girl.planetlist.get(1).Raasi)]+"</td></tr>";
+                HTMLMaker = "<html>";
+                HTMLMaker += "<style>\n" +
+                        "table, th, td {\n" +
+                        "  border: 1px solid black;\n" +
+                        "}\n" +
+                        "</style>";
+                HTMLMaker += "<body><center><table style = 'border: 1px solid black;'>";
+                HTMLMaker +="<tr><td>"+Girl.Name+"</td><td>Name</td><td>"+Boy.Name+"</td></tr>";
+                HTMLMaker +="<tr><td>"+constants.nakshatra[Integer.parseInt(Girl.planetlist.get(1).Nakshatra)]+"</td><td>Nakshatra</td><td>"+constants.nakshatra[Integer.parseInt(Boy.planetlist.get(1).Nakshatra)]+"</td></tr>";
+                HTMLMaker +="<tr><td>"+Raasi[Integer.parseInt(Girl.planetlist.get(1).Raasi)]+"</td><td>Raasi</td><td>"+Raasi[Integer.parseInt(Boy.planetlist.get(1).Raasi)]+"</td></tr>";
+                HTMLMaker +="</table><table style = 'border: 1px solid black;'>";
                 HTMLMaker +="<tr><td>Varna</td><td>1</td><td>"+String.valueOf(koot.calcVarnaKoota())+"</td></tr>";
                 HTMLMaker +="<tr><td>Vaisya</td><td>2</td><td>"+String.valueOf(koot.calcVasyaKoota())+"</td></tr>";
                 HTMLMaker +="<tr><td>Tara</td><td>3</td><td>"+String.valueOf(koot.calcTara())+"</td></tr>";
