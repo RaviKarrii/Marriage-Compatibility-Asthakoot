@@ -23,7 +23,7 @@ public class Main_Window {
     private JTextField GLat;
     private JTextField GLon;
     private JEditorPane Details;
-
+    private String [] Raasi = {"Aries","Taurus","Gemini","Cancer","Leo","Virgo","Libra","Scorpio","Sagittarius","Capricorn","Aquarius","Pisces"};
     public Main_Window() {
         Generate.addActionListener(new ActionListener() {
             @Override
@@ -44,16 +44,18 @@ public class Main_Window {
                 HTMLMaker +="<tr><td>Girl Name</td><td>"+Girl.Name+"</td></tr>";
                 HTMLMaker +="<tr><td>Boy Nakshatra</td><td>"+constants.nakshatra[Integer.parseInt(Boy.planetlist.get(1).Nakshatra)]+"</td></tr>";
                 HTMLMaker +="<tr><td>Girl Nakshatra</td><td>"+constants.nakshatra[Integer.parseInt(Girl.planetlist.get(1).Nakshatra)]+"</td></tr>";
-                HTMLMaker +="<tr><td>Boy Raasi</td><td>"+Boy.planetlist.get(1).Raasi+"</td></tr>";
-                HTMLMaker +="<tr><td>Girl Raasi</td><td>"+Girl.planetlist.get(1).Raasi+"</td></tr>";
-                HTMLMaker +="<tr><td>Varna</td><td>"+String.valueOf(koot.calcVarnaKoota())+"</td></tr>";
-                HTMLMaker +="<tr><td>Vaisya</td><td>"+String.valueOf(koot.calcVasyaKoota())+"</td></tr>";
-                HTMLMaker +="<tr><td>Tara</td><td>"+String.valueOf(koot.calcTara())+"</td></tr>";
-                HTMLMaker +="<tr><td>Yoni</td><td>"+String.valueOf(koot.calcYoni())+"</td></tr>";
-                HTMLMaker +="<tr><td>Maitri</td><td>"+String.valueOf(koot.calcMaitri())+"</td></tr>";
-                HTMLMaker +="<tr><td>Gana</td><td>"+String.valueOf(koot.calcGanaKuta())+"</td></tr>";
-                HTMLMaker +="<tr><td>Bahkut</td><td>"+String.valueOf(koot.calcBahkut())+"</td></tr>";
-
+                HTMLMaker +="<tr><td>Boy Raasi</td><td>"+Raasi[Integer.parseInt(Boy.planetlist.get(1).Raasi)]+"</td></tr>";
+                HTMLMaker +="<tr><td>Girl Raasi</td><td>"+Raasi[Integer.parseInt(Girl.planetlist.get(1).Raasi)]+"</td></tr>";
+                HTMLMaker +="<tr><td>Varna</td><td>1</td><td>"+String.valueOf(koot.calcVarnaKoota())+"</td></tr>";
+                HTMLMaker +="<tr><td>Vaisya</td><td>2</td><td>"+String.valueOf(koot.calcVasyaKoota())+"</td></tr>";
+                HTMLMaker +="<tr><td>Tara</td><td>3</td><td>"+String.valueOf(koot.calcTara())+"</td></tr>";
+                HTMLMaker +="<tr><td>Yoni</td><td>4</td><td>"+String.valueOf(koot.calcYoni())+"</td></tr>";
+                HTMLMaker +="<tr><td>Maitri</td><td>5</td><td>"+String.valueOf(koot.calcMaitri())+"</td></tr>";
+                HTMLMaker +="<tr><td>Gana</td><td>6</td><td>"+String.valueOf(koot.calcGanaKuta())+"</td></tr>";
+                HTMLMaker +="<tr><td>Bahkut</td><td>7</td><td>"+String.valueOf(koot.calcBahkut())+"</td></tr>";
+                HTMLMaker +="<tr><td>Naadi</td><td>8</td><td>"+String.valueOf(koot.calcNadi())+"</td></tr>";
+                Double Total = koot.calcVarnaKoota()+koot.calcVasyaKoota()+Double.parseDouble(koot.calcTara())+Double.parseDouble(koot.calcYoni())+koot.calcMaitri()+koot.calcGanaKuta()+koot.calcBahkut()+koot.calcNadi();
+                HTMLMaker +="<tr><td>Total</td><td>36</td><td>"+Total+"</td></tr>";
                 HTMLMaker+="</table>";
                 HTMLMaker+="</center></body></html>";
 

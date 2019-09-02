@@ -193,10 +193,22 @@ public class Astakoot {
 
     }
     public int calcNadi(){
-        
+        int bv = 2  ,gv = 2 ;
 
+        if (boyNak == 0 || boyNak == 5 ||boyNak == 6 ||boyNak == 11 ||boyNak == 12 ||boyNak == 17 ||boyNak == 18 ||boyNak == 23 ||boyNak == 24){
+            bv = 0;
+        }
+        if (girlNak == 0 || girlNak == 5 ||girlNak == 6 ||girlNak == 11 ||girlNak == 12 ||girlNak == 17 ||girlNak == 18 ||girlNak == 23 ||girlNak == 24){
+            bv = 0;
+        }
+        if (boyNak == 1 || boyNak == 4 ||boyNak == 7 ||boyNak == 10 ||boyNak == 13 ||boyNak == 16 ||boyNak == 19 ||boyNak == 22 ||boyNak == 25){
+            gv = 1;
+        }
+        if (girlNak == 1 || girlNak == 4 ||girlNak == 7 ||girlNak == 10 ||girlNak == 13 ||girlNak == 16 ||girlNak == 19 ||girlNak == 22 ||girlNak == 25){
+            gv = 1;
+        }
 
-        return 0;
+        return Arrays.NadiArray[gv][bv];
 
     }
 
