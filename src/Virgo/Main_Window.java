@@ -9,7 +9,6 @@ public class Main_Window {
     private JTabbedPane MainTab;
     private JPanel Inputs;
     private JPanel Calculation;
-    private JEditorPane Details;
     private JButton Generate;
     private JPanel GirlDet;
     private JPanel BoyDet;
@@ -23,6 +22,7 @@ public class Main_Window {
     private JTextField BLon;
     private JTextField GLat;
     private JTextField GLon;
+    private JEditorPane Details;
 
     public Main_Window() {
         Generate.addActionListener(new ActionListener() {
@@ -32,14 +32,30 @@ public class Main_Window {
                 Horoscope Girl = new Horoscope(GName.getText(),GBD.getText(),GBT.getText(),GLat.getText(),GLon.getText());
                 Boy.process();
                 Girl.process();
-                System.out.println(Boy.planetlist.get(1).Nakshatra);
-                System.out.println(Girl.planetlist.get(1).Nakshatra);
-                Astakoot koot = new Astakoot(Integer.parseInt(Boy.planetlist.get(1).Nakshatra),Integer.parseInt(Girl.planetlist.get(1).Nakshatra));
+                //System.out.println(Boy.planetlist.get(1).Nakshatra);
+                //System.out.println(Girl.planetlist.get(1).Nakshatra);
+                Astakoot koot = new Astakoot(Integer.parseInt(Boy.planetlist.get(1).Nakshatra),Integer.parseInt(Girl.planetlist.get(1).Nakshatra),Integer.parseInt(Boy.planetlist.get(1).Raasi),Integer.parseInt(Girl.planetlist.get(1).Raasi));
                 int a = koot.calcDinaKuta();
-                Log(String.valueOf(koot.calcGanaKuta()));
-                Log(String.valueOf(koot.calcTara()));
-                Log(String.valueOf(koot.calcYoni()));
+                Constants constants = new Constants();
+                String HTMLMaker = "";
+                Details.setContentType("text/html");
+                HTMLMaker = "<html><body><table>";
+                HTMLMaker +="<tr><td>Boy Name</td><td>"+Boy.Name+"</td></tr>";
+                HTMLMaker +="<tr><td>Girl Name</td><td>"+Girl.Name+"</td></tr>";
+                HTMLMaker +="<tr><td>Boy Nakshatra</td><td>"+constants.nakshatra[Integer.parseInt(Boy.planetlist.get(1).Nakshatra)]+"</td></tr>";
+                HTMLMaker +="<tr><td>Girl Nakshatra</td><td>"+constants.nakshatra[Integer.parseInt(Girl.planetlist.get(1).Nakshatra)]+"</td></tr>";
+                HTMLMaker +="<tr><td>Boy Raasi</td><td>"+Boy.planetlist.get(1).Raasi+"</td></tr>";
+                HTMLMaker +="<tr><td>Girl Raasi</td><td>"+Girl.planetlist.get(1).Raasi+"</td></tr>";
+                HTMLMaker +="<tr><td>Varna</td><td>"+String.valueOf(koot.calcVarnaKoota())+"</td></tr>";
+                HTMLMaker +="<tr><td>Gana</td><td>"+String.valueOf(koot.calcGanaKuta())+"</td></tr>";
+                HTMLMaker +="<tr><td>Tara</td><td>"+String.valueOf(koot.calcTara())+"</td></tr>";
+                HTMLMaker +="<tr><td>Yoni</td><td>"+String.valueOf(koot.calcYoni())+"</td></tr>";
 
+
+                HTMLMaker+="</table>";
+                HTMLMaker+="</center></body></html>";
+
+                Details.setText(HTMLMaker);
             }
         });
     }

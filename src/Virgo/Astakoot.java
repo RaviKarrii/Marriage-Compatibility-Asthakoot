@@ -1,40 +1,45 @@
 package Virgo;
 
 public class Astakoot {
-    int boyNak,girlNak;
-
-    Double [][] TaraConst = {
-            {3.0, 3.0, 1.5, 3.0, 1.5, 3.0, 1.5, 3.0, 3.0},
-            {3.0, 3.0, 1.5, 3.0, 1.5, 3.0, 1.5, 3.0, 3.0},
-            {1.5, 1.5, 0.0, 1.5, 0.0, 1.5, 0.0, 1.5, 1.5},
-            {3.0, 3.0, 1.5, 3.0, 1.5, 3.0, 1.5, 3.0, 3.0},
-            {1.5, 1.5, 0.0, 1.5, 0.0, 1.5, 0.0, 1.5, 1.5},
-            {3.0, 3.0, 1.5, 3.0, 1.5, 3.0, 1.5, 3.0, 3.0},
-            {1.5, 1.5, 0.0, 1.5, 0.0, 1.5, 0.0, 1.0, 1.0},
-            {3.0, 3.0, 1.5, 3.0, 1.5, 3.0, 1.5, 3.0, 3.0},
-            {3.0, 3.0, 1.5, 3.0, 1.5, 3.0, 1.5, 3.0, 3.0}
-    };
-    int [] animalMappings = {0,1,2,3,3,4,5,2,5,6,6,7,8,9,8,9,11,10,4,11,12,11,13,0,13,7,1,12};
-    int [][] YoniArray = {
-            {4, 2, 2, 3, 2, 2, 2, 1, 0, 1, 1, 3, 2, 1},
-            {2, 4, 3, 3, 2, 2, 2, 2, 3, 1, 2, 3, 2, 0},
-            {2, 3, 4, 3, 2, 2, 2, 2, 3, 1, 2, 3, 2, 0},
-            {3, 3, 2, 4, 2, 1, 1, 1, 1, 2, 2, 2, 0, 2},
-            {2, 2, 1, 2, 4, 2, 1, 2, 2, 1, 0, 2, 1, 1},
-            {2, 2, 2, 1, 2, 4, 0, 2, 2, 1, 3, 3, 2, 1},
-            {2, 2, 1, 1, 1, 0, 4, 2, 2, 2, 2, 2, 1, 2},
-            {1, 2, 3, 1, 2, 2, 2, 4, 3, 0, 3, 2, 2, 1},
-            {0, 3, 3, 1, 2, 2, 2, 3, 4, 1, 2, 2, 2, 2},
-            {1, 1, 1, 2, 1, 1, 2, 0, 1, 4, 1, 1, 2, 1},
-            {1, 2, 2, 2, 0, 3, 2, 3, 2, 1, 4, 2, 2, 1},
-            {3, 3, 0, 2, 2, 3, 2, 2, 2, 1, 2, 4, 3, 2},
-            {2, 2, 3, 0, 1, 2, 1, 2, 2, 2, 2, 3, 4, 2},
-            {1, 0, 1, 2, 1, 1, 2, 1, 2, 1, 1, 2, 2, 4}
-    };
-    public Astakoot(int boyNak,int girlNak){
+    int boyNak,girlNak,boyRaasi,girlRaasi;
+    public String nakshatra[] = {"Ashwini", "Bharani", "Krittika", "Rohini", "Mrigshira", "Ardra", "Punarvasu", "Pushya", "Ashlesha", "Magha", "Purva Phalguni", "Uttara Phalguni", "Hasta", "Chitra", "Swati", "Vishakha", "Anuradha", "Jyestha", "Mula", "Purva Ashadha", "Uttara Ashadha", "Shravana", "Dhanishta", "Satabhisha", "Purva Bhadrapada", "Uttara Bhadrapada", "Revati", "Abhijit"};
+    public int [] animalMappings = {0,1,2,3,3,4,5,2,5,6,6,7,8,9,8,9,11,10,4,11,12,11,13,0,13,7,1,12};
+    Constants Arrays = new Constants();
+    public Astakoot(int boyNak,int girlNak,int boyRaasi,int girlRaasi){
         this.boyNak = boyNak;
         this.girlNak = girlNak;
+        this.boyRaasi = boyRaasi;
+        this.girlRaasi = girlRaasi;
     }
+    public int calcVarnaKoota(){
+        int Bvkpoint = 3,Gvkpoint = 3;
+        if (boyRaasi == 4 || boyRaasi == 8 || boyRaasi == 12){
+            Bvkpoint = 0;
+        }
+        if (boyRaasi == 1 || boyRaasi == 5 || boyRaasi == 9){
+            Bvkpoint = 1;
+        }
+        if (boyRaasi == 2 || boyRaasi == 6 || boyRaasi == 10){
+            Bvkpoint = 2;
+        }
+        if (girlRaasi == 4 || girlRaasi == 8 || girlRaasi == 12){
+            Gvkpoint = 0;
+        }
+        if (girlRaasi == 1 || girlRaasi == 5 || girlRaasi == 9){
+            Gvkpoint = 1;
+        }
+        if (girlRaasi == 2 || girlRaasi == 6 || girlRaasi == 10){
+            Gvkpoint = 2;
+        }
+
+
+        return Arrays.VarnaArray[Gvkpoint][Bvkpoint];
+    }
+
+
+
+
+
     public int calcDinaKuta() {
 
         int count = (boyNak - girlNak + 1);
@@ -181,11 +186,12 @@ public class Astakoot {
             gn =Integer.parseInt(String.valueOf(girlNak).substring(1))+1;
         }
 
-        return String.valueOf(TaraConst[bn][gn]);
+        return String.valueOf(Arrays.TaraConst[bn][gn]);
     }
     public String calcYoni(){
-        System.out.println("Yoni" + String.valueOf(animalMappings[boyNak])+ String.valueOf(animalMappings[girlNak]));
-        return String.valueOf(YoniArray[animalMappings[boyNak]][animalMappings[girlNak]]);
+        System.out.println(nakshatra[boyNak] + " " + nakshatra[girlNak]);
+        System.out.println(String.valueOf(Arrays.animalMappings[boyNak])+ " " +String.valueOf(Arrays.animalMappings[girlNak]));
+        return String.valueOf(Arrays.YoniArray[Arrays.animalMappings[boyNak]][Arrays.animalMappings[girlNak]]);
     }
 
 }
