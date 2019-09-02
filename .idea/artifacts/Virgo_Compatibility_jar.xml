@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Virgo-Compatibility:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Virgo_Compatibility_jar</output-path>
+    <root id="archive" name="Virgo-Compatibility.jar">
+      <element id="module-output" name="Virgo-Compatibility" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/RES/swisseph-2.01.00-02.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
