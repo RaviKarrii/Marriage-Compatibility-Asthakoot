@@ -61,7 +61,7 @@ public class Main_Window {
                 HTMLMaker +="<tr><td>Gana</td><td>6</td><td>"+String.valueOf(koot.calcGanaKuta())+"</td></tr>";
                 HTMLMaker +="<tr><td>Bahkut</td><td>7</td><td>"+String.valueOf(koot.calcBahkut())+"</td></tr>";
                 HTMLMaker +="<tr><td>Naadi</td><td>8</td><td>"+String.valueOf(koot.calcNadi())+"</td></tr>";
-                Double Total = koot.calcVarnaKoota()+koot.calcVasyaKoota()+Double.parseDouble(koot.calcTara())+Double.parseDouble(koot.calcYoni())+koot.calcMaitri()+koot.calcGanaKuta()+koot.calcBahkut()+koot.calcNadi();
+                Double Total = koot.calcVarnaKoota()+koot.calcVasyaKoota()+koot.calcDinaKuta()+Double.parseDouble(koot.calcYoni())+koot.calcMaitri()+koot.calcGanaKuta()+koot.calcBahkut()+koot.calcNadi();
                 HTMLMaker +="<tr><td>Total</td><td>36</td><td>"+Total+"</td></tr>";
                 HTMLMaker+="</table>";
                 HTMLMaker+="</center></body></html>";
