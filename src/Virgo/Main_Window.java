@@ -23,7 +23,7 @@ public class Main_Window {
     private JTextField GLat;
     private JTextField GLon;
     private JEditorPane Details;
-    private String [] Raasi = {"Aries","Taurus","Gemini","Cancer","Leo","Virgo","Libra","Scorpio","Sagittarius","Capricorn","Aquarius","Pisces"};
+    private String [] Raasi = {"","Aries","Taurus","Gemini","Cancer","Leo","Virgo","Libra","Scorpio","Sagittarius","Capricorn","Aquarius","Pisces"};
     public Main_Window() {
         Generate.addActionListener(new ActionListener() {
             @Override

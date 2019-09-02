@@ -38,24 +38,28 @@ public class Astakoot {
 
     public Double calcVasyaKoota() {
         int Bvkpoint = 4, Gvkpoint = 4;
+        //Human
         if (boyRaasi == 3 || boyRaasi == 6 || boyRaasi == 7 || boyRaasi == 9 || boyRaasi == 11)    {
             Bvkpoint = 0;
         }
         if (girlRaasi == 3 ||girlRaasi == 6 ||girlRaasi == 7 ||girlRaasi == 9 || girlRaasi == 11)    {
             Gvkpoint = 0;
         }
+        //Leo
         if (boyRaasi == 5){
             Bvkpoint = 1;
         }
         if (girlRaasi == 5){
             Gvkpoint = 1;
         }
+        //Quadruped
         if (boyRaasi == 1 || boyRaasi == 2 || boyRaasi == 10)    {
             Bvkpoint = 2;
         }
         if (girlRaasi == 1 ||girlRaasi == 2 ||girlRaasi == 10)    {
             Gvkpoint = 2;
         }
+        //Jalachara
         if (boyRaasi == 4 || boyRaasi == 10 || boyRaasi == 12)    {
             Bvkpoint = 3;
         }
@@ -199,10 +203,10 @@ public class Astakoot {
             bv = 0;
         }
         if (girlNak == 0 || girlNak == 5 ||girlNak == 6 ||girlNak == 11 ||girlNak == 12 ||girlNak == 17 ||girlNak == 18 ||girlNak == 23 ||girlNak == 24){
-            bv = 0;
+            gv = 0;
         }
         if (boyNak == 1 || boyNak == 4 ||boyNak == 7 ||boyNak == 10 ||boyNak == 13 ||boyNak == 16 ||boyNak == 19 ||boyNak == 22 ||boyNak == 25){
-            gv = 1;
+            bv = 1;
         }
         if (girlNak == 1 || girlNak == 4 ||girlNak == 7 ||girlNak == 10 ||girlNak == 13 ||girlNak == 16 ||girlNak == 19 ||girlNak == 22 ||girlNak == 25){
             gv = 1;
