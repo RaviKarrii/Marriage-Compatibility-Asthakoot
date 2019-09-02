@@ -67,15 +67,15 @@ public class Astakoot {
             Gvkpoint = 3;
         }
 
-        return Arrays.VasyaArray[Gvkpoint][Bvkpoint];
+        return Arrays.VasyaArray[Bvkpoint][Gvkpoint];
     }
 
 
 
 
-    public int calcDinaKuta() {
-
-        int count = (boyNak - girlNak + 1);
+    public double calcDinaKuta() {
+        double res = 0.0;
+        int count = (boyNak - girlNak);
 
         if (count <= 0) {
 
@@ -88,13 +88,34 @@ public class Astakoot {
         // System.out.println(boyNak + " - " + girlNak + " Count : " + count);
         if ((count % 2) == 0) {
 
-            return 3;
+            res += 1.5;
 
         } else {
 
-            return 0;
+            res += 0;
 
         }
+        count = (girlNak - boyNak);
+
+        if (count <= 0) {
+
+            count = count + 27;
+
+        }
+
+        count = count % 9;
+
+        // System.out.println(boyNak + " - " + girlNak + " Count : " + count);
+        if ((count % 2) == 0) {
+
+            res += 1.5;
+
+        } else {
+
+            res += 0;
+
+        }
+        return res;
 
     }
     public int calcGanaKuta() {
@@ -191,8 +212,8 @@ public class Astakoot {
 
 
     public String calcYoni(){
-        System.out.println(nakshatra[boyNak] + " " + nakshatra[girlNak]);
-        System.out.println(boyNak + " " + girlNak);
+        //System.out.println(nakshatra[boyNak] + " " + nakshatra[girlNak]);
+        //System.out.println(boyNak + " " + girlNak);
         return String.valueOf(Arrays.YoniArray[Arrays.animalMappings[girlNak]][Arrays.animalMappings[boyNak]]);
     }
     public Double calcMaitri(){

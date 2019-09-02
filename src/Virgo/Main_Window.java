@@ -36,7 +36,7 @@ public class Main_Window {
                 //System.out.println(Boy.planetlist.get(1).Nakshatra);
                 //System.out.println(Girl.planetlist.get(1).Nakshatra);
                 Astakoot koot = new Astakoot(Integer.parseInt(Boy.planetlist.get(1).Nakshatra),Integer.parseInt(Girl.planetlist.get(1).Nakshatra),Integer.parseInt(Boy.planetlist.get(1).Raasi),Integer.parseInt(Girl.planetlist.get(1).Raasi));
-                int a = koot.calcDinaKuta();
+                //int a = koot.calcDinaKuta();
                 Constants constants = new Constants();
                 String HTMLMaker = "";
                 Details.setContentType("text/html");
@@ -46,14 +46,16 @@ public class Main_Window {
                         "  border: 1px solid black;\n" +
                         "}\n" +
                         "</style>";
-                HTMLMaker += "<body><center><table style = 'border: 1px solid black;'>";
-                HTMLMaker +="<tr><td>"+Girl.Name+"</td><td>Name</td><td>"+Boy.Name+"</td></tr>";
-                HTMLMaker +="<tr><td>"+constants.nakshatra[Integer.parseInt(Girl.planetlist.get(1).Nakshatra)]+"</td><td>Nakshatra</td><td>"+constants.nakshatra[Integer.parseInt(Boy.planetlist.get(1).Nakshatra)]+"</td></tr>";
-                HTMLMaker +="<tr><td>"+Raasi[Integer.parseInt(Girl.planetlist.get(1).Raasi)]+"</td><td>Raasi</td><td>"+Raasi[Integer.parseInt(Boy.planetlist.get(1).Raasi)]+"</td></tr>";
-                HTMLMaker +="</table><table style = 'border: 1px solid black;'>";
+                HTMLMaker += "<body>";
+                HTMLMaker += "<center><br/><br/><br/><br/><table style = 'border: 1px solid black;'>";
+                HTMLMaker +="<tr><td>"+Boy.Name+"</td><td><b>Name</b></td><td>"+Girl.Name+"</td></tr>";
+                HTMLMaker +="<tr><td>"+constants.nakshatra[Integer.parseInt(Boy.planetlist.get(1).Nakshatra)]+"</td><td><b>Nakshatra</b></td><td>"+constants.nakshatra[Integer.parseInt(Girl.planetlist.get(1).Nakshatra)]+"</td></tr>";
+                HTMLMaker +="<tr><td>"+Raasi[Integer.parseInt(Boy.planetlist.get(1).Raasi)]+"</td><td><b>Raasi</b></td><td>"+Raasi[Integer.parseInt(Girl.planetlist.get(1).Raasi)]+"</td></tr>";
+                HTMLMaker +="</table><br/><br/><br/><br/><table><tr><th>Category</th><th>Max</th><th>Obtained</th></tr>";
                 HTMLMaker +="<tr><td>Varna</td><td>1</td><td>"+String.valueOf(koot.calcVarnaKoota())+"</td></tr>";
                 HTMLMaker +="<tr><td>Vaisya</td><td>2</td><td>"+String.valueOf(koot.calcVasyaKoota())+"</td></tr>";
-                HTMLMaker +="<tr><td>Tara</td><td>3</td><td>"+String.valueOf(koot.calcTara())+"</td></tr>";
+                //HTMLMaker +="<tr><td>Tara</td><td>3</td><td>"+String.valueOf(koot.calcTara())+"</td></tr>";
+                HTMLMaker +="<tr><td>Tara</td><td>3</td><td>"+String.valueOf(koot.calcDinaKuta())+"</td></tr>";
                 HTMLMaker +="<tr><td>Yoni</td><td>4</td><td>"+String.valueOf(koot.calcYoni())+"</td></tr>";
                 HTMLMaker +="<tr><td>Maitri</td><td>5</td><td>"+String.valueOf(koot.calcMaitri())+"</td></tr>";
                 HTMLMaker +="<tr><td>Gana</td><td>6</td><td>"+String.valueOf(koot.calcGanaKuta())+"</td></tr>";
