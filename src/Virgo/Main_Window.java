@@ -80,8 +80,8 @@ public class Main_Window {
         Frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         Frame.setDefaultCloseOperation(Frame.EXIT_ON_CLOSE);
         Frame.setVisible(true);
-        mainWin.BName.setText("Ravi");
-        mainWin.GName.setText("Teja");
+        mainWin.BName.setText("Boy");
+        mainWin.GName.setText("Girl");
         mainWin.BBD.setText("16/9/1993");
         mainWin.GBD.setText("6/8/1995");
         mainWin.BBT.setText("17:55:00");
