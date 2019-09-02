@@ -50,8 +50,9 @@ public class Main_Window {
                 HTMLMaker +="<tr><td>Vaisya</td><td>"+String.valueOf(koot.calcVasyaKoota())+"</td></tr>";
                 HTMLMaker +="<tr><td>Tara</td><td>"+String.valueOf(koot.calcTara())+"</td></tr>";
                 HTMLMaker +="<tr><td>Yoni</td><td>"+String.valueOf(koot.calcYoni())+"</td></tr>";
+                HTMLMaker +="<tr><td>Maitri</td><td>"+String.valueOf(koot.calcMaitri())+"</td></tr>";
                 HTMLMaker +="<tr><td>Gana</td><td>"+String.valueOf(koot.calcGanaKuta())+"</td></tr>";
-
+                HTMLMaker +="<tr><td>Bahkut</td><td>"+String.valueOf(koot.calcBahkut())+"</td></tr>";
 
                 HTMLMaker+="</table>";
                 HTMLMaker+="</center></body></html>";

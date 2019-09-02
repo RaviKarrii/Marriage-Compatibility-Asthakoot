@@ -183,8 +183,21 @@ public class Astakoot {
     public String calcYoni(){
         System.out.println(nakshatra[boyNak] + " " + nakshatra[girlNak]);
         System.out.println(boyNak + " " + girlNak);
-        System.out.println(String.valueOf(Arrays.animalMappings[boyNak])+ " " +String.valueOf(Arrays.animalMappings[girlNak]));
         return String.valueOf(Arrays.YoniArray[Arrays.animalMappings[girlNak]][Arrays.animalMappings[boyNak]]);
+    }
+    public Double calcMaitri(){
+        return Arrays.MaitriArray[Arrays.MaitriMappings[girlRaasi]][Arrays.MaitriMappings[boyRaasi]];
+    }
+    public int calcBahkut(){
+        return Arrays.BahkutArray[girlRaasi-1][boyRaasi-1];
+
+    }
+    public int calcNadi(){
+        
+
+
+        return 0;
+
     }
 
 }
