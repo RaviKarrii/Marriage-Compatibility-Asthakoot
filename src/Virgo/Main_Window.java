@@ -47,9 +47,10 @@ public class Main_Window {
                 HTMLMaker +="<tr><td>Boy Raasi</td><td>"+Boy.planetlist.get(1).Raasi+"</td></tr>";
                 HTMLMaker +="<tr><td>Girl Raasi</td><td>"+Girl.planetlist.get(1).Raasi+"</td></tr>";
                 HTMLMaker +="<tr><td>Varna</td><td>"+String.valueOf(koot.calcVarnaKoota())+"</td></tr>";
-                HTMLMaker +="<tr><td>Gana</td><td>"+String.valueOf(koot.calcGanaKuta())+"</td></tr>";
+                HTMLMaker +="<tr><td>Vaisya</td><td>"+String.valueOf(koot.calcVasyaKoota())+"</td></tr>";
                 HTMLMaker +="<tr><td>Tara</td><td>"+String.valueOf(koot.calcTara())+"</td></tr>";
                 HTMLMaker +="<tr><td>Yoni</td><td>"+String.valueOf(koot.calcYoni())+"</td></tr>";
+                HTMLMaker +="<tr><td>Gana</td><td>"+String.valueOf(koot.calcGanaKuta())+"</td></tr>";
 
 
                 HTMLMaker+="</table>";

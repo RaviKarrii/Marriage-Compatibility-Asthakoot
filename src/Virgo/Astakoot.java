@@ -36,6 +36,35 @@ public class Astakoot {
         return Arrays.VarnaArray[Gvkpoint][Bvkpoint];
     }
 
+    public Double calcVasyaKoota() {
+        int Bvkpoint = 4, Gvkpoint = 4;
+        if (boyRaasi == 3 || boyRaasi == 6 || boyRaasi == 7 || boyRaasi == 9 || boyRaasi == 11)    {
+            Bvkpoint = 0;
+        }
+        if (girlRaasi == 3 ||girlRaasi == 6 ||girlRaasi == 7 ||girlRaasi == 9 || girlRaasi == 11)    {
+            Gvkpoint = 0;
+        }
+        if (boyRaasi == 5){
+            Bvkpoint = 1;
+        }
+        if (girlRaasi == 5){
+            Gvkpoint = 1;
+        }
+        if (boyRaasi == 1 || boyRaasi == 2 || boyRaasi == 10)    {
+            Bvkpoint = 2;
+        }
+        if (girlRaasi == 1 ||girlRaasi == 2 ||girlRaasi == 10)    {
+            Gvkpoint = 2;
+        }
+        if (boyRaasi == 4 || boyRaasi == 10 || boyRaasi == 12)    {
+            Bvkpoint = 3;
+        }
+        if (girlRaasi == 4 ||girlRaasi == 10 ||girlRaasi == 12)    {
+            Gvkpoint = 3;
+        }
+
+        return Arrays.VasyaArray[Gvkpoint][Bvkpoint];
+    }
 
 
 
@@ -190,8 +219,9 @@ public class Astakoot {
     }
     public String calcYoni(){
         System.out.println(nakshatra[boyNak] + " " + nakshatra[girlNak]);
+        System.out.println(boyNak + " " + girlNak);
         System.out.println(String.valueOf(Arrays.animalMappings[boyNak])+ " " +String.valueOf(Arrays.animalMappings[girlNak]));
-        return String.valueOf(Arrays.YoniArray[Arrays.animalMappings[boyNak]][Arrays.animalMappings[girlNak]]);
+        return String.valueOf(Arrays.YoniArray[Arrays.animalMappings[girlNak]][Arrays.animalMappings[boyNak]]);
     }
 
 }
