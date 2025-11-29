@@ -36,15 +36,15 @@ class CompatibilityControllerTest {
         String requestJson = "{\n" +
                 "    \"boy\": {\n" +
                 "        \"name\": \"Boy\",\n" +
-                "        \"birthDate\": \"1990-01-01\",\n" +
-                "        \"birthTime\": \"10:00\",\n" +
+                "        \"birthDate\": \"01/01/1990\",\n" +
+                "        \"birthTime\": \"10:00:00\",\n" +
                 "        \"latitude\": \"17.3850\",\n" +
                 "        \"longitude\": \"78.4867\"\n" +
                 "    },\n" +
                 "    \"girl\": {\n" +
                 "        \"name\": \"Girl\",\n" +
-                "        \"birthDate\": \"1992-02-02\",\n" +
-                "        \"birthTime\": \"11:00\",\n" +
+                "        \"birthDate\": \"02/02/1992\",\n" +
+                "        \"birthTime\": \"11:00:00\",\n" +
                 "        \"latitude\": \"17.3850\",\n" +
                 "        \"longitude\": \"78.4867\"\n" +
                 "    }\n" +

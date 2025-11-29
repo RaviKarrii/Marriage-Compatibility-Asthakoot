@@ -36,7 +36,7 @@ class AstakootTest {
         // Boy: Ashwini -> Horse (0)
         // Girl: Bharani -> Elephant (1)
         // YoniArray[1][0] -> 2
-        assertEquals("2.0", koot.calcYoni());
+        assertEquals("2", koot.calcYoni());
         
         // Maitri:
         // Boy: Aries (Mars)
@@ -47,8 +47,8 @@ class AstakootTest {
         // Gana:
         // Boy: Ashwini -> Deva (0)
         // Girl: Bharani -> Manushya (1)
-        // Girl(1) Boy(0) -> 0
-        assertEquals(0, koot.calcGanaKuta());
+        // Girl(1) Boy(0) -> 6 (Manushya - Deva)
+        assertEquals(6, koot.calcGanaKuta());
         
         // Bahkut:
         // Both Aries -> 1-1 = 0 -> 7
