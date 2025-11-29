@@ -1,7 +1,7 @@
 package Virgo;
 
 public class Planet {
-    String Name,ActualCoord,CalcCoord,Raasi,Nakshatra;
+    public String Name,ActualCoord,CalcCoord,Raasi,Nakshatra;
     public Planet(String Name,String ActualCoord,String CalcCoord,String Raasi,String Nakshatra)
     {
         this.Name = Name;

@@ -36,6 +36,18 @@ A Java-based application for calculating marriage compatibility using the Vedic 
    mvn clean install
    ```
 
+### Docker
+
+1. Build the Docker image:
+   ```bash
+   docker build -t marriage-compatibility .
+   ```
+
+2. Run the container:
+   ```bash
+   docker run -p 8080:8080 marriage-compatibility
+   ```
+
 ## Usage
 
 ### Running the Application
